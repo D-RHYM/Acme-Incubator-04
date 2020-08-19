@@ -17,7 +17,7 @@
 
 	<import resource="conversion-service.xml" />
 
-<!-- Caceres bulletin -->
+	<!-- Caceres bulletin -->
 	<bean id="caceresbulletin01" class="acme.entities.bulletins.CaceresBulletin">
 		<property name="author" value="David Caceres" />
 		<property name="moment" value="2019/09/06 01:00" />
@@ -33,7 +33,7 @@
 		<property name="age" value="57" />
 	</bean>
 	
-		<!-- Gonzalez bulletin -->
+	<!-- Gonzalez bulletin -->
 
 	<bean id="gonzalezbulletin01" class="acme.entities.bulletins.GonzalezBulletin">
 		<property name="screenshot" value="https://imgur.com/gallery/ubA7F" />
@@ -49,7 +49,7 @@
 		<property name="moment" value="2019/12/24 17:45" />
 	</bean>
 	
-			<!-- Credit Card -->
+	<!-- Credit Card -->
 
 	<bean id="creditCard01" class="acme.entities.creditCard.CreditCard">
 		<property name="holderName" value="Fernando" />
@@ -59,7 +59,7 @@
 		<property name="expirationDate" value="2021/09/14 15:30" />
 	</bean>
 	
-			<!-- Banner -->
+	<!-- Banner -->
 
 		<bean id="banner01" class="acme.entities.banner.Banner">
 		<property name="picture"
@@ -79,7 +79,7 @@
 		</property>
 	</bean>
 
-		<!-- CustomisationParameters -->
+	<!-- CustomisationParameters -->
 
 	<bean id="customisationParameters01" class="acme.entities.customisationParameters.CustomisationParameters">
 		<property name="spamWords"
@@ -243,6 +243,7 @@
 		<property value="Draw 3 self-protrait." name="expertGoal"/>	
 		<property value="600€" name="expertReward"/>
 	</bean>
+	
 	<!-- Tool Records -->
 	
 	<bean id="ToolRecord1" class="acme.entities.toolRecords.ToolRecord">
@@ -267,5 +268,69 @@
 		<property name="stars" value="-3" />
 	</bean>
 	
+	<!-- Entrepreneurs -->
+	
+	<bean name="entrepreneurAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneurUserAccount" />
+	</bean>
+	
+	<bean name="entrepreneurUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur" />
+		<property name="password" value="entrepreneur" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur" />
+				<property name="surname" value="Entrepreneur" />
+				<property name="email" value="entrepreneur@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneurEntrepreneur" />
+				<ref bean="entrepreneurAuthenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="entrepreneurEntrepreneur" class="acme.entities.roles.Entrepreneur">
+		<property name="name" value="Entrepreneur" />
+		<property name="sector" value="Software" />
+		<property name="qualificationRecord" value="C++" />
+		<property name="skillsRecord" value="Graphic designer" />
+		<property name="userAccount" ref="entrepreneurUserAccount" />
+	</bean>
+	
+	<!-- Investor -->
+	
+	<bean name="investorAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investorUserAccount" />
+	</bean>
+	
+	<bean name="investorUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor" />
+		<property name="password" value="investor" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Investor" />
+				<property name="email" value="investor@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investorInvestor" />
+				<ref bean="investorAuthenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="investorInvestor" class="acme.entities.roles.Investor">
+		<property name="name" value="Investor" />
+		<property name="sector" value="Software" />
+		<property name="profile" value="Profile" />
+		<property name="userAccount" ref="investorUserAccount" />
+	</bean>
 
 	</beans>
