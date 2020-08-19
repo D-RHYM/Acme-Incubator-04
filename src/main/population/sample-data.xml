@@ -332,5 +332,65 @@
 		<property name="profile" value="Profile" />
 		<property name="userAccount" ref="investorUserAccount" />
 	</bean>
+	
+	<!-- Investment Rounds  -->
+	
+	<bean id="investmentRound1" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="DCR-02-592214"/>
+		<property name="moment" value="2020/07/30 15:30"/>
+		<property name="round" value="ANGEL"/>
+		<property name="title" value="Investment 1"/>
+		<property name="description" value="Epic description 1"/>
+		<property name="amount" value="250.25 €"/>
+		<property name="link" value="http://link.com"/>
+		<property name="entrepreneur">
+			<ref bean="entrepreneurEntrepreneur"/>
+		</property>
+	</bean>
+	
+	<bean id="investmentRound2" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="AGM-06-114631"/>
+		<property name="moment" value="2019/09/13 16:45"/>
+		<property name="round" value="SERIES_A"/>
+		<property name="title" value="Investment 2"/>
+		<property name="description" value="Epic description 2"/>
+		<property name="amount" value="232.46 €"/>
+		<property name="link" value="http://link.com"/>
+		<property name="entrepreneur">
+			<ref bean="entrepreneurEntrepreneur"/>
+		</property>
+	</bean>
+	
+	<!-- Activities  -->
+	
+	<bean id="activity1" class="acme.entities.investmentRounds.Activity">
+		<property name="title" value="Activity 1"/>
+		<property name="moment" value="2020/02/01 00:00"/>
+		<property name="deadline" value="2021/02/20 23:00"/>
+		<property name="budget" value="214.99 €"/>
+		<property name="investmentRound">
+			<ref bean="investmentRound1"/>
+		</property>
+	</bean>
+	
+	<bean id="activity2" class="acme.entities.investmentRounds.Activity">
+		<property name="title" value="Activity 2"/>
+		<property name="moment" value="2020/04/18 16:00"/>
+		<property name="deadline" value="2021/04/14 23:00"/>
+		<property name="budget" value="123.50 €"/>
+		<property name="investmentRound">
+			<ref bean="investmentRound1"/>
+		</property>
+	</bean>
+	
+	<bean id="activity3" class="acme.entities.investmentRounds.Activity">
+		<property name="title" value="Activity 3"/>
+		<property name="moment" value="2020/03/21 12:40"/>
+		<property name="deadline" value="2021/05/03 22:25"/>
+		<property name="budget" value="142.10 €"/>
+		<property name="investmentRound">
+			<ref bean="investmentRound2"/>
+		</property>
+	</bean>
 
 	</beans>
