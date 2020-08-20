@@ -45,9 +45,6 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 		assert entity != null;
 		assert model != null;
 
-		String entrepreneur = entity.getInvestmentRound().getEntrepreneur().getUserAccount().getUsername();
-		model.setAttribute("entrepreneur", entrepreneur);
-
 		request.unbind(entity, model, "ticker", "moment", "statement", "moneyOffer");
 
 	}
