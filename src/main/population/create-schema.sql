@@ -1,4 +1,16 @@
 
+    create table `activity` (
+       `id` integer not null,
+        `version` integer not null,
+        `budget_amount` double precision,
+        `budget_currency` varchar(255),
+        `deadline` datetime(6),
+        `moment` datetime(6),
+        `title` varchar(255),
+        `investment_round_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `administrator` (
        `id` integer not null,
         `version` integer not null,
@@ -10,6 +22,20 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `money_offer_amount` double precision,
+        `money_offer_currency` varchar(255),
+        `statement` varchar(255),
+        `ticker` varchar(255),
+        `entrepreneur_id` integer not null,
+        `investment_round_id` integer not null,
+        `investor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -123,6 +149,21 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `investment_round` (
+       `id` integer not null,
+        `version` integer not null,
+        `amount_amount` double precision,
+        `amount_currency` varchar(255),
+        `description` varchar(255),
+        `link` varchar(255),
+        `moment` datetime(6),
+        `round` integer,
+        `ticker` varchar(255),
+        `title` varchar(255),
+        `entrepreneur_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `investor` (
        `id` integer not null,
         `version` integer not null,
@@ -218,6 +259,11 @@
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
+    alter table `activity` 
+       add constraint `FK1ufotopeofii4jlefyk9c7os5` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
+
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
        foreign key (`user_account_id`) 
@@ -227,6 +273,21 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `application` 
+       add constraint `FKp6hc01e2bc6ly2q8rv4b7ubro` 
+       foreign key (`entrepreneur_id`) 
+       references `entrepreneur` (`id`);
+
+    alter table `application` 
+       add constraint `FKk5ibe41quxsif8im882xv4afo` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
+
+    alter table `application` 
+       add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
+       foreign key (`investor_id`) 
+       references `investor` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -247,6 +308,11 @@
        add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `investment_round` 
+       add constraint `FKkj1l8c2ftn9c65y061me6t37j` 
+       foreign key (`entrepreneur_id`) 
+       references `entrepreneur` (`id`);
 
     alter table `investor` 
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
