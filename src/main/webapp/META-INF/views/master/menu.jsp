@@ -99,6 +99,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
+			<acme:menu-suboption code="master.menu.entrepreneur.list-mine-application" action="/entrepreneur/application/list-mine"/>
 			<acme:menu-suboption code="master.menu.entrepreneur.list-investment-round" action="/entrepreneur/investment-round/list_mine"/>
 		</acme:menu-option>
 		

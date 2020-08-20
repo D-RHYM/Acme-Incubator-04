@@ -115,6 +115,7 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.entrepreneur ######################################################
 
 master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.list-mine-application = List my applications
 master.menu.entrepreneur.list-investment-round = List investment rounds
 
 # master.menu.user-account ####################################################
