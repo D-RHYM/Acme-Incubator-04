@@ -51,6 +51,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-inquirie" action="/authenticated/inquirie/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-challenge" action="/authenticated/challenge/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-tool-record" action="/authenticated/tool-record/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-investment-round" action="/authenticated/investment-round/list"/>
 		</acme:menu-option>
 		
 		
