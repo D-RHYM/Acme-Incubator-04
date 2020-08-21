@@ -6,7 +6,7 @@ entrepreneur.investmentRound.form.label.description = Descripción:
 entrepreneur.investmentRound.form.label.amount = Cantidad:
 entrepreneur.investmentRound.form.label.link = Enlace:
 
-entrepreneur.workProgramme.list = Lista de actividades
+entrepreneur.investmentRound.activity.list = Lista de actividades
 
 entrepreneur.investmentRound.form.button.return = Volver
 

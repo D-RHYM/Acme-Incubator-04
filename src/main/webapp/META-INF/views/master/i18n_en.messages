@@ -102,8 +102,6 @@ master.menu.administrator.list-techRecord = List tech records
 
 master.menu.administrator.dashboard = Dashboard
 
-
-
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -118,11 +116,12 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.investor = Investor
 master.menu.investor.application  = List my applications
+
 # master.menu.entrepreneur ######################################################
 
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.list-mine-application = List my applications
-master.menu.entrepreneur.list-investment-round = List investment rounds
+master.menu.entrepreneur.list-investment-round = List my investment rounds
 
 # master.menu.user-account ####################################################
 
