@@ -409,7 +409,6 @@
 		</property>
 	</bean>
 	
-
 	<bean id="investmentRound2" class="acme.entities.investmentRounds.InvestmentRound">
 		<property name="ticker" value="AGM-06-114631"/>
 		<property name="moment" value="2019/09/13 16:45"/>
@@ -420,10 +419,10 @@
 		<property name="link" value="http://link.com"/>
 		<property name="entrepreneur">
 			<ref bean="entrepreneur2Entrepreneur"/>
-
 		</property>
 	</bean>
 	
+
 	<!-- Activities  -->
 	
 	<bean id="activity1" class="acme.entities.investmentRounds.Activity">

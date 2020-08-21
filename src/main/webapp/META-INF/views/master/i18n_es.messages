@@ -115,6 +115,10 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.investor ###########################################################
+
+master.menu.investor = Inversor
+master.menu.investor.application  = Listar mis aplicaciones
 # master.menu.entrepreneur ######################################################
 
 master.menu.entrepreneur = Emprendedor
