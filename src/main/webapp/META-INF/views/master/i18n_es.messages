@@ -74,6 +74,8 @@ master.menu.authenticated.list-challenge = Listar desafios
 master.menu.authenticated.tool-record = Registro de herramientas
 master.menu.authenticated.list-tool-record = Listar registros de herramientas
 
+master.menu.authenticated.list-investment-round = Listar rondas de inversiones
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -117,6 +119,11 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 master.menu.investor = Inversor
 master.menu.investor.application  = Listar mis aplicaciones
+# master.menu.entrepreneur ######################################################
+
+master.menu.entrepreneur = Emprendedor
+master.menu.entrepreneur.list-mine-application = Listar mis aplicaciones
+master.menu.entrepreneur.list-investment-round = Listar rondas de inversiones
 
 # master.menu.user-account ####################################################
 

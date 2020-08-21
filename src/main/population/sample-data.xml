@@ -422,6 +422,7 @@
 		</property>
 	</bean>
 	
+
 	<!-- Activities  -->
 	
 	<bean id="activity1" class="acme.entities.investmentRounds.Activity">

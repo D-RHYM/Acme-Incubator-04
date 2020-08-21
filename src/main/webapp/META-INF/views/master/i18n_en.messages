@@ -71,7 +71,9 @@ master.menu.authenticated.challenge = Challenges
 master.menu.authenticated.list-challenge = List Challenges
 
 master.menu.authenticated.tool-record = Tool Records
-master.menu.authenticated.list-tool-record = List Tool Record
+master.menu.authenticated.list-tool-record = List Tool Records
+
+master.menu.authenticated.list-investment-round = List Investment Rounds
 
 # master.menu.administrator ###################################################
 
@@ -116,6 +118,11 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.investor = Investor
 master.menu.investor.application  = List my applications
+# master.menu.entrepreneur ######################################################
+
+master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.list-mine-application = List my applications
+master.menu.entrepreneur.list-investment-round = List investment rounds
 
 # master.menu.user-account ####################################################
 
