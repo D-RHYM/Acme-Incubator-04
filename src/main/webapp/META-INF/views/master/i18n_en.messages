@@ -74,7 +74,7 @@ master.menu.authenticated.tool-record = Tool Records
 master.menu.authenticated.list-tool-record = List Tool Records
 
 master.menu.authenticated.list-investment-round = List Investment Rounds
-
+master.menu.authenticated.list-my-discussion-forum = List my discussions forums
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -122,6 +122,12 @@ master.menu.investor.application  = List my applications
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.list-mine-application = List my applications
 master.menu.entrepreneur.list-investment-round = List my investment rounds
+
+# master.menu.bookkeeper ######################################################
+
+master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.list-investment-round = List my investment rounds
+master.menu.bookkeeper.list-not-investment-round = List not my investment rounds
 
 # master.menu.user-account ####################################################
 

@@ -11,7 +11,7 @@ authenticated.investmentRound.form.label.offer = Oferta:
 authenticated.investmentRound.form.label.entrepreneur = Empresario:
 
 authenticated.investmentRound.form.button.return = Volver
-
+authenticated.investmentRound.form.button.list-accounting-record = Listar Registros de Contabilidad
 authenticated.investmentRound.list.label.title = Título
 authenticated.investmentRound.list.label.ticker = Ticker
 authenticated.investmentRound.list.label.amount = Cantidad 

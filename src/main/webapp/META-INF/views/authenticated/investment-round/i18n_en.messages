@@ -11,7 +11,7 @@ authenticated.investmentRound.form.label.offer = Offer:
 authenticated.investmentRound.form.label.entrepreneur = Entrepreneur:
 
 authenticated.investmentRound.form.button.return = Return
-
+authenticated.investmentRound.form.button.list-accounting-record = List Accounting Records
 authenticated.investmentRound.list.label.title = Title
 authenticated.investmentRound.list.label.ticker = Ticker
 authenticated.investmentRound.list.label.amount = Amount

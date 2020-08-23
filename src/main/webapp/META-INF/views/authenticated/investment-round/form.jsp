@@ -19,6 +19,7 @@
     
 	<br>
 	<br>
-	
+		<acme:form-submit test="${command == 'show'}" code="authenticated.investmentRound.form.button.list-accounting-record"
+		action="/authenticated/accounting-record/list?id=${id}" method="get" />	
 	<acme:form-return code="authenticated.investmentRound.form.button.return" />
 </acme:form>

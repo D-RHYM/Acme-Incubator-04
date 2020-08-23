@@ -75,6 +75,7 @@ master.menu.authenticated.tool-record = Registro de herramientas
 master.menu.authenticated.list-tool-record = Listar registros de herramientas
 
 master.menu.authenticated.list-investment-round = Listar rondas de inversiones
+master.menu.authenticated.list-my-discussion-forum = Listar mis foros
 
 # master.menu.administrator ###################################################
 
@@ -123,6 +124,12 @@ master.menu.investor.application  = Listar mis aplicaciones
 master.menu.entrepreneur = Emprendedor
 master.menu.entrepreneur.list-mine-application = Listar mis aplicaciones
 master.menu.entrepreneur.list-investment-round = Listar mis rondas de inversiones
+
+# master.menu.bookkeeper ######################################################
+
+master.menu.bookkeeper = Contable
+master.menu.bookkeeper.list-investment-round = Listar mis rondas de inversiones
+master.menu.bookkeeper.list-not-investment-round = Listar rondas de inversiones ajenas
 
 # master.menu.user-account ####################################################
 

@@ -9,6 +9,7 @@ entrepreneur.investmentRound.form.label.link = Enlace:
 entrepreneur.investmentRound.activity.list = Lista de actividades
 
 entrepreneur.investmentRound.form.button.return = Volver
+entrepreneur.investmentRound.form.button.list-accounting-record = Listar registros de contabilidad
 
 entrepreneur.investmentRound.list.label.ticker = Ticker
 entrepreneur.investmentRound.list.label.round = Ronda

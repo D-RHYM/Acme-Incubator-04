@@ -487,4 +487,195 @@
   		<property name="investmentRound" ref="investmentRound2" />
   	</bean>
 
-	</beans>
+<!-- Bookkeeper -->
+	
+	<bean name="bookkeeper1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper1UserAccount" />
+	</bean>
+	
+	<bean name="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper1" />
+		<property name="password" value="bookkeeper1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Bookkeeper1" />
+				<property name="surname" value="Bookkeeper1" />
+				<property name="email" value="bookkeeper@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper1Bookkeeper" />
+				<ref bean="bookkeeper1Authenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="bookkeeper1Bookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="firm" value="Bookkeeper1" />
+		<property name="responsabilityStatement" value="I will take responsability for what i've done" />
+		<property name="userAccount" ref="bookkeeper1UserAccount" />
+	</bean>
+	
+	<bean name="bookkeeper2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper2UserAccount" />
+	</bean>
+	
+	<bean name="bookkeeper2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper2" />
+		<property name="password" value="bookkeeper2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Bookkeeper2" />
+				<property name="surname" value="Bookkeeper2" />
+				<property name="email" value="bookkeeper2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper2Bookkeeper" />
+				<ref bean="bookkeeper2Authenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="firm" value="Bookkeeper2" />
+		<property name="responsabilityStatement" value="If i must fall, i will rise each time a better man." />
+		<property name="userAccount" ref="bookkeeper2UserAccount" />
+	</bean>
+	
+<!-- Discussion Forum -->
+
+	<bean name="discussionForum1" class="acme.entities.discussionForum.DiscussionForum">
+		<property name="investmentRound" ref="investmentRound1" />
+		<property name="creator" ref="entrepreneur1Authenticated" />
+	</bean>
+
+	<bean name="discussionForum1participant1" class="acme.entities.participant.Participant">
+		<property name="discussionForum" ref="discussionForum1" />
+		<property name="authenticated" ref="entrepreneur1Authenticated" />
+	</bean>
+
+	<bean name="discussionForum1participant2" class="acme.entities.participant.Participant">
+		<property name="discussionForum" ref="discussionForum1" />
+		<property name="authenticated" ref="investor1Authenticated" />
+	</bean>
+
+	<bean name="discussionForum1message1" class="acme.entities.message.Message">
+		<property name="title" value="Mensaje 1 Forum 1" />
+		<property name="moment" value="2019/10/27 23:59" />
+		<property name="body" value="Acabo de crear un Message de ejemplo." />
+		<property name="tags">
+			<null />
+		</property>
+		<property name="discussionForum" ref="discussionForum1" />
+		<property name="creator" ref="entrepreneur1Authenticated" />
+	</bean>
+
+	<bean name="discussionForum1message2" class="acme.entities.message.Message">
+		<property name="title" value="Mensaje 2 forum 1" />
+		<property name="moment" value="2019/10/28 14:00" />
+		<property name="body" value="Continúo con el Forum." />
+		<property name="tags">
+			<null />
+		</property>
+		<property name="discussionForum" ref="discussionForum1" />
+		<property name="creator" ref="investor1Authenticated" />
+	</bean>
+
+	<bean name="discussionForum1message3" class="acme.entities.message.Message">
+		<property name="title" value="Mensaje 3 forum 1" />
+		<property name="moment" value="2019/10/29 14:00" />
+		<property name="body" value="Continúo con el forum una vez  mas." />
+		<property name="tags">
+			<null />
+		</property>
+		<property name="discussionForum" ref="discussionForum1" />
+		<property name="creator" ref="investor1Authenticated" />
+	</bean>
+	
+		<bean name="discussionForum2" class="acme.entities.discussionForum.DiscussionForum">
+		<property name="investmentRound" ref="investmentRound2" />
+		<property name="creator" ref="entrepreneur2Authenticated" />
+	</bean>
+
+	<bean name="discussionForum2participant1" class="acme.entities.participant.Participant">
+		<property name="discussionForum" ref="discussionForum2" />
+		<property name="authenticated" ref="entrepreneur2Authenticated" />
+	</bean>
+
+	<bean name="discussionForum2participant2" class="acme.entities.participant.Participant">
+		<property name="discussionForum" ref="discussionForum2" />
+		<property name="authenticated" ref="investor1Authenticated" />
+	</bean>
+	
+	<bean name="discussionForum2participant3" class="acme.entities.participant.Participant">
+		<property name="discussionForum" ref="discussionForum2" />
+		<property name="authenticated" ref="investor2Authenticated" />
+	</bean>
+
+	<bean name="discussionForum2message1" class="acme.entities.message.Message">
+		<property name="title" value="Mensaje 1 Forum 2" />
+		<property name="moment" value="2019/10/27 23:59" />
+		<property name="body" value="Acabo de crear un Message de ejemplo." />
+		<property name="tags">
+			<null />
+		</property>
+		<property name="discussionForum" ref="discussionForum2" />
+		<property name="creator" ref="entrepreneur2Authenticated" />
+	</bean>
+
+	<bean name="discussionForum2message2" class="acme.entities.message.Message">
+		<property name="title" value="Mensaje 2 forum 2" />
+		<property name="moment" value="2019/10/28 14:00" />
+		<property name="body" value="Continúo con el Forum." />
+		<property name="tags">
+			<null />
+		</property>
+		<property name="discussionForum" ref="discussionForum2" />
+		<property name="creator" ref="investor2Authenticated" />
+	</bean>
+
+	<bean name="discussionForum2message3" class="acme.entities.message.Message">
+		<property name="title" value="Mensaje 3 forum 3" />
+		<property name="moment" value="2019/10/29 14:00" />
+		<property name="body" value="Continúo con el forum una vez  mas." />
+		<property name="tags">
+			<null />
+		</property>
+		<property name="discussionForum" ref="discussionForum2" />
+		<property name="creator" ref="investor1Authenticated" />
+	</bean>
+	
+		<!-- Accounting Records -->
+	
+	<bean id="accountingRecord1" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="A good Title"/>
+		<property name="moment" value="2020/03/24 10:30"/>
+		<property name="status" value="PUBLISHED"/>
+		<property name="body" value="This is a test accounting record"/>
+		<property name="investmentRound" ref="investmentRound1" />
+		<property name="creator" ref="bookkeeper1Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord2" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="A good Title 2"/>
+		<property name="moment" value="2020/03/24 15:30"/>
+		<property name="status" value="PUBLISHED"/>
+		<property name="body" value="This is a test accounting record for the same investment round"/>
+		<property name="investmentRound" ref="investmentRound1" />
+		<property name="creator" ref="bookkeeper2Bookkeeper" />
+	</bean>
+		<bean id="accountingRecord3" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="A good Title 3"/>
+		<property name="moment" value="2020/01/14 10:30"/>
+		<property name="status" value="PUBLISHED"/>
+		<property name="body" value="This is the last test accounting record for the same investment round"/>
+		<property name="investmentRound" ref="investmentRound1" />
+		<property name="creator" ref="bookkeeper2Bookkeeper" />
+	</bean>
+	
+</beans>	
