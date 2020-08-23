@@ -1,4 +1,12 @@
 
+    alter table `accounting_record` 
+       drop 
+       foreign key `FK1ael07h1c59wo1efugbs4nlgc`;
+
+    alter table `accounting_record` 
+       drop 
+       foreign key `FKk1pmfnppwk0kav7xloy8u71uq`;
+
     alter table `activity` 
        drop 
        foreign key `FK1ufotopeofii4jlefyk9c7os5`;
@@ -31,9 +39,21 @@
        drop 
        foreign key `FKr19baq0bri0akndc7ruwhngy4`;
 
+    alter table `bookkeeper` 
+       drop 
+       foreign key FK_krvjp9eaqyapewl2igugbo9o8;
+
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
+
+    alter table `discussion_forum` 
+       drop 
+       foreign key `FKbfag2xg62p5csp5sfcf99thfd`;
+
+    alter table `discussion_forum` 
+       drop 
+       foreign key `FKmcgrpw22g3baap51wq319v1bp`;
 
     alter table `entrepreneur` 
        drop 
@@ -47,9 +67,27 @@
        drop 
        foreign key FK_dcek5rr514s3rww0yy57vvnpq;
 
+    alter table `message` 
+       drop 
+       foreign key `FKd8wmf6nghttk2h9gq7v8p9lqo`;
+
+    alter table `message` 
+       drop 
+       foreign key `FKr2om5f6tefk2fg0fyl53q2kgd`;
+
+    alter table `participant` 
+       drop 
+       foreign key `FK80gruu22vbyiojed5sawtqc6a`;
+
+    alter table `participant` 
+       drop 
+       foreign key `FK2rgdydjuquk8s9d5tqijli0hy`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    drop table if exists `accounting_record`;
 
     drop table if exists `activity`;
 
@@ -63,6 +101,8 @@
 
     drop table if exists `banner`;
 
+    drop table if exists `bookkeeper`;
+
     drop table if exists `caceres_bulletin`;
 
     drop table if exists `challenge`;
@@ -72,6 +112,8 @@
     drop table if exists `credit_card`;
 
     drop table if exists `customisation_parameters`;
+
+    drop table if exists `discussion_forum`;
 
     drop table if exists `entrepreneur`;
 
@@ -83,9 +125,13 @@
 
     drop table if exists `investor`;
 
+    drop table if exists `message`;
+
     drop table if exists `notice`;
 
     drop table if exists `overture`;
+
+    drop table if exists `participant`;
 
     drop table if exists `provider`;
 

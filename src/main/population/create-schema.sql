@@ -1,4 +1,16 @@
 
+    create table `accounting_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `status` integer,
+        `title` varchar(255),
+        `creator_id` integer not null,
+        `investment_round_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `activity` (
        `id` integer not null,
         `version` integer not null,
@@ -56,6 +68,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `bookkeeper` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsability_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `caceres_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -110,6 +131,14 @@
         `activity_sectors` varchar(255),
         `spam_threshold` float not null,
         `spam_words` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `discussion_forum` (
+       `id` integer not null,
+        `version` integer not null,
+        `creator_id` integer not null,
+        `investment_round_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -174,6 +203,18 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        `creator_id` integer not null,
+        `discussion_forum_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `notice` (
        `id` integer not null,
         `version` integer not null,
@@ -198,6 +239,14 @@
         `min_money_currency` varchar(255),
         `moment` datetime(6),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `participant` (
+       `id` integer not null,
+        `version` integer not null,
+        `authenticated_id` integer not null,
+        `discussion_forum_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -259,6 +308,16 @@
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
+    alter table `accounting_record` 
+       add constraint `FK1ael07h1c59wo1efugbs4nlgc` 
+       foreign key (`creator_id`) 
+       references `bookkeeper` (`id`);
+
+    alter table `accounting_record` 
+       add constraint `FKk1pmfnppwk0kav7xloy8u71uq` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
+
     alter table `activity` 
        add constraint `FK1ufotopeofii4jlefyk9c7os5` 
        foreign key (`investment_round_id`) 
@@ -299,10 +358,25 @@
        foreign key (`credit_card_id`) 
        references `credit_card` (`id`);
 
+    alter table `bookkeeper` 
+       add constraint FK_krvjp9eaqyapewl2igugbo9o8 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `consumer` 
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `discussion_forum` 
+       add constraint `FKbfag2xg62p5csp5sfcf99thfd` 
+       foreign key (`creator_id`) 
+       references `authenticated` (`id`);
+
+    alter table `discussion_forum` 
+       add constraint `FKmcgrpw22g3baap51wq319v1bp` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
 
     alter table `entrepreneur` 
        add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
@@ -318,6 +392,26 @@
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `message` 
+       add constraint `FKd8wmf6nghttk2h9gq7v8p9lqo` 
+       foreign key (`creator_id`) 
+       references `authenticated` (`id`);
+
+    alter table `message` 
+       add constraint `FKr2om5f6tefk2fg0fyl53q2kgd` 
+       foreign key (`discussion_forum_id`) 
+       references `discussion_forum` (`id`);
+
+    alter table `participant` 
+       add constraint `FK80gruu22vbyiojed5sawtqc6a` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
+    alter table `participant` 
+       add constraint `FK2rgdydjuquk8s9d5tqijli0hy` 
+       foreign key (`discussion_forum_id`) 
+       references `discussion_forum` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

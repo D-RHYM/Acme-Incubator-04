@@ -45,15 +45,12 @@ public class Application extends DomainEntity {
 	@Valid
 	@NotNull
 	private Money				moneyOffer;
-
-	// Derived attributes -----------------------------------------------------
+	// Relationships ----------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Entrepreneur		entrepreneur;
-
-	// Relationships ----------------------------------------------------------
 
 	@NotNull
 	@Valid
