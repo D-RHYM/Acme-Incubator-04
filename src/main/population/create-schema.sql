@@ -87,6 +87,17 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `entrepreneur` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `name` varchar(255),
+        `qualification_record` varchar(255),
+        `sector` varchar(255),
+        `skills_record` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `gonzalez_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -109,6 +120,16 @@
         `min_money_amount` double precision,
         `min_money_currency` varchar(255),
         `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `investor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `name` varchar(255),
+        `profile` varchar(255),
+        `sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -219,6 +240,16 @@
 
     alter table `consumer` 
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `entrepreneur` 
+       add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `investor` 
+       add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
