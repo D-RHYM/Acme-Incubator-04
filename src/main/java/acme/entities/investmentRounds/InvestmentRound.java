@@ -41,7 +41,7 @@ public class InvestmentRound extends DomainEntity {
 	@Past
 	private Date				moment;
 
-	@NotBlank
+	@NotNull
 	private kindRound			round;
 
 	@NotBlank
