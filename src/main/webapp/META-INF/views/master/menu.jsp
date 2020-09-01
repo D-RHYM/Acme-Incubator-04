@@ -42,7 +42,7 @@
 	<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.anonymous.list-tool-record" action="/anonymous/tool-record/list"/>
 			
-</acme:menu-option>
+	</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.list-notice" action="/authenticated/notice/list"/>
@@ -51,6 +51,8 @@
 			<acme:menu-suboption code="master.menu.authenticated.list-inquirie" action="/authenticated/inquirie/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-challenge" action="/authenticated/challenge/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-tool-record" action="/authenticated/tool-record/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-investment-round" action="/authenticated/investment-round/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-my-discussion-forum" action="/authenticated/discussion-forum/list-mine" />
 		</acme:menu-option>
 		
 		
@@ -97,6 +99,21 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.investor" access="hasRole('Investor')">
+			<acme:menu-suboption code="master.menu.investor.application" action="/investor/application/list_mine"/>
+      	</acme:menu-option>
+      	
+		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
+			<acme:menu-suboption code="master.menu.entrepreneur.list-mine-application" action="/entrepreneur/application/list-mine"/>
+			<acme:menu-suboption code="master.menu.entrepreneur.list-investment-round" action="/entrepreneur/investment-round/list_mine"/>
+		</acme:menu-option>
+		
+			<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+			<acme:menu-suboption code="master.menu.bookkeeper.list-investment-round" action="/bookkeeper/investment-round/list_mine"/>
+			<acme:menu-suboption code="master.menu.bookkeeper.list-not-investment-round" action="/bookkeeper/investment-round/list_not_mine"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
